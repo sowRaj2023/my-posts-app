@@ -40,10 +40,10 @@ npm start
 Open your browser and navigate to http://localhost:3000 to view the application.
 
 Features
-Create Post: Create new posts and store them in the mock API.
-View Posts: Fetch and display all posts from the mock API.
-Edit Posts: Update existing posts using CRUD operations.
-Delete Posts: Remove posts from the mock API.
+**Create Post**: Create new posts and store them in the mock API.
+**View Posts**: Fetch and display all posts from the mock API.
+**Edit Posts**: Update existing posts using CRUD operations.
+**Delete Posts**: Remove posts from the mock API.
 Dependencies
 react: JavaScript library for building user interfaces
 react-dom: React package for DOM rendering
