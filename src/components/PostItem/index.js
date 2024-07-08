@@ -20,9 +20,12 @@ const PostItem = ({ postDetails, onEditPost, onDeletePost }) => {
         <div className="post-item">
 
             <h3>{title}</h3>
+            <div class = "postItems">
             <p className="post-username">{username}</p>
             <p className="post-date">{new Date(date).toLocaleString()}</p>
+            </div>
             <img src={image} alt={title} className="post-image" />
+            
             <p className="post-description">{description}</p>
             <div>
 
