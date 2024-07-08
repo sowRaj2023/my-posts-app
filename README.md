@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# React App with Mock API (json-server)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project demonstrates how to integrate a React application with a mock API using json-server. The mock API allows you to simulate backend functionalities such as creating, reading, updating, and deleting posts.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+To get started with this project, follow these steps:
 
-### `npm start`
+### Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Node.js installed on your machine
+- npm (Node Package Manager) or yarn
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Installation
 
-### `npm test`
+1. Clone the repository to your local machine:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```bash
+   git clone <repository-url>
+   cd <repository-name>
+Starting the Mock API
+Ensure json-server is installed globally. If not, install it using:
 
-### `npm run build`
+bash
+Copy code
+npm install -g json-server
+Start json-server with the provided db.json file:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+bash
+Copy code
+json-server --watch db.json --port 5000
+This will start the mock API server at http://localhost:5000.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Running the React Application
+In a new terminal window, start the React application:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+bash
+Copy code
+npm start
+Open your browser and navigate to http://localhost:3000 to view the application.
 
-### `npm run eject`
+Features
+**Create Post**: Create new posts and store them in the mock API.
+**View Posts**: Fetch and display all posts from the mock API.
+**Edit Posts**: Update existing posts using CRUD operations.
+**Delete Posts**: Remove posts from the mock API.
+Dependencies
+react: JavaScript library for building user interfaces
+react-dom: React package for DOM rendering
+react-scripts: Scripts and configuration used by Create React App
+json-server: Mock REST API server using a JSON file as database
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Acknowledgments
+json-server - For providing a simple mock API solution
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Author
+Sowndharya
