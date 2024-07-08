@@ -16,9 +16,13 @@ class App extends Component {
 
   fetchPosts = async () => {
     try {
-      const response = await fetch('http://localhost:3003/posts');
-      const posts = await response.json();
-      this.setState({ posts });
+      const response = await fetch('https://668b7e360b61b8d23b09c745.mockapi.io/posts');
+      const data = await response.json();
+      if (Array.isArray(data)) {
+        this.setState({ posts: data });
+      } else {
+        console.error('Fetched data is not an array:', data);
+      }
     } catch (error) {
       console.error('Error fetching posts:', error);
     }
@@ -26,7 +30,7 @@ class App extends Component {
 
   handleDeletePost = async id => {
     try {
-      const response = await fetch(`http://localhost:3003/posts/${id}`, {
+      const response = await fetch(`https://668b7e360b61b8d23b09c745.mockapi.io/posts/${id}`, {
         method: 'DELETE',
       });
       if (response.ok) {
@@ -41,16 +45,12 @@ class App extends Component {
     }
   };
 
-
-
-
-
   handleAddPost = async newPost => {
     newPost.id = uuidv4();
-    newPost.date = new Date();
+    newPost.date = new Date().toISOString();
 
     try {
-      const response = await fetch('http://localhost:3003/posts', {
+      const response = await fetch('https://668b7e360b61b8d23b09c745.mockapi.io/posts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ class App extends Component {
 
   handleUpdatePost = async updatedPost => {
     try {
-      const response = await fetch(`http://localhost:3003/posts/${updatedPost.id}`, {
+      const response = await fetch(`https://668b7e360b61b8d23b09c745.mockapi.io/posts/${updatedPost.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -95,12 +95,21 @@ class App extends Component {
 
     return (
       <div className="app">
-        <h1 className='heading'>Posts App</h1>
-        <CreatePost onAddPost={this.handleAddPost} onUpdatePost={this.handleUpdatePost} currentPost={currentPost} />
-        <PostsDisplay posts={posts} onEditPost={this.handleEditPost} onDeletePost={this.handleDeletePost} />
+        <h1 className="heading">Posts App</h1>
+        <CreatePost
+          onAddPost={this.handleAddPost}
+          onUpdatePost={this.handleUpdatePost}
+          currentPost={currentPost}
+        />
+        <PostsDisplay
+          posts={posts}
+          onEditPost={this.handleEditPost}
+          onDeletePost={this.handleDeletePost}
+        />
       </div>
     );
   }
 }
 
 export default App;
+
